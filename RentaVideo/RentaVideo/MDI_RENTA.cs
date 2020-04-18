@@ -21,9 +21,11 @@ namespace CapaVistaFRM
         private mantenimiento_categoria frm_mantenimiento_categoria;
         private mantenimiento_bono frm_mantenimiento_bono;
         private renta_encab frm_renta_encab;
+        private consulta_renta frm_consulta_renta;
+        private devoluciones frm_devoluciones;
 
         //sentencia sn = new sentencia();
-        String usuarioActivo = "rchocm";
+        String usuarioActivo = "";
 
         public MDI_RENTA()
         {
@@ -47,6 +49,11 @@ namespace CapaVistaFRM
         { frm_mantenimiento_bono = null; }
         private void frm_renta_encab_FormClosed(Object sender, FormClosedEventArgs e)
         { frm_renta_encab = null; }
+        private void frm_consulta_renta_FormClosed(Object sender, FormClosedEventArgs e)
+        { frm_consulta_renta = null; }
+        private void frm_devoluciones_FormClosed(Object sender, FormClosedEventArgs e)
+        { frm_devoluciones = null; }
+        //devoluciones
         //====================Funciones de declaración de Eventos====================
 
         private void ConciliaciónBancariaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,12 +92,11 @@ namespace CapaVistaFRM
         }
         
         private void MDI_FRM_Load(object sender, EventArgs e)
-        {
-            /*
+        {            
             frm_login login = new frm_login();
             login.ShowDialog();
             Lbl_usuario.Text = login.obtenerNombreUsuario();
-            usuarioActivo = Lbl_usuario.Text;            */
+            usuarioActivo = Lbl_usuario.Text;       
         } 
 
         private void SeguridadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -255,6 +261,38 @@ namespace CapaVistaFRM
             else
             {
                 frm_renta_encab.Activate();
+            }
+        }
+
+        private void ConsultaDeRentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Consulta de Renta
+            if (frm_consulta_renta == null)
+            {
+                frm_consulta_renta = new consulta_renta();
+                frm_consulta_renta.MdiParent = this;
+                frm_consulta_renta.FormClosed += new FormClosedEventHandler(frm_consulta_renta_FormClosed);
+                frm_consulta_renta.Show();
+            }
+            else
+            {
+                frm_consulta_renta.Activate();
+            }
+        }
+
+        private void DevolucionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //DEVOLUCIONES
+            if (frm_devoluciones == null)
+            {
+                frm_devoluciones = new devoluciones();
+                frm_devoluciones.MdiParent = this;
+                frm_devoluciones.FormClosed += new FormClosedEventHandler(frm_devoluciones_FormClosed);
+                frm_devoluciones.Show();
+            }
+            else
+            {
+                frm_devoluciones.Activate();
             }
         }
     }

@@ -55,3 +55,6 @@ C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Pro
 C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 3\RentaVideo\RentaVideo\obj\Debug\CapaVistaFRM.renta_detalle.resources
 C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 3\RentaVideo\RentaVideo\obj\Debug\CapaVistaFRM.formato.resources
 C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 3\RentaVideo\RentaVideo\obj\Debug\CapaVistaFRM.renta_encab.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 3\RentaVideo\RentaVideo\obj\Debug\CapaVistaFRM.consulta_renta.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 3\RentaVideo\RentaVideo\obj\Debug\CapaVistaFRM.devo_detalle.resources
+C:\Users\Randy\Desktop\UMG\9.no Semestre\Ingeniería de Software\2do Parcial\Proyecto 3\RentaVideo\RentaVideo\obj\Debug\CapaVistaFRM.devoluciones.resources

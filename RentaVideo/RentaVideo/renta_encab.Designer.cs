@@ -68,12 +68,12 @@
             this.Gpb_encabezado.Controls.Add(this.label3);
             this.Gpb_encabezado.Controls.Add(this.label2);
             this.Gpb_encabezado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Gpb_encabezado.Location = new System.Drawing.Point(16, 91);
+            this.Gpb_encabezado.Location = new System.Drawing.Point(18, 91);
             this.Gpb_encabezado.Name = "Gpb_encabezado";
             this.Gpb_encabezado.Size = new System.Drawing.Size(616, 198);
             this.Gpb_encabezado.TabIndex = 4;
             this.Gpb_encabezado.TabStop = false;
-            this.Gpb_encabezado.Text = "Detalles de la Renta";
+            this.Gpb_encabezado.Text = "Encabezado de la Renta";
             // 
             // txt_codEncab
             // 
@@ -95,22 +95,26 @@
             // Dtp_fin
             // 
             this.Dtp_fin.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dtp_fin.CustomFormat = "yyyy-MM-dd";
             this.Dtp_fin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtp_fin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Dtp_fin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Dtp_fin.Location = new System.Drawing.Point(422, 60);
             this.Dtp_fin.Name = "Dtp_fin";
             this.Dtp_fin.Size = new System.Drawing.Size(171, 27);
             this.Dtp_fin.TabIndex = 16;
+            this.Dtp_fin.Value = new System.DateTime(2020, 4, 17, 0, 0, 0, 0);
             // 
             // Dtp_inicio
             // 
             this.Dtp_inicio.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dtp_inicio.CustomFormat = "yyyy-MM-dd";
             this.Dtp_inicio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtp_inicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Dtp_inicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Dtp_inicio.Location = new System.Drawing.Point(218, 60);
             this.Dtp_inicio.Name = "Dtp_inicio";
             this.Dtp_inicio.Size = new System.Drawing.Size(164, 27);
             this.Dtp_inicio.TabIndex = 15;
+            this.Dtp_inicio.Value = new System.DateTime(2020, 4, 17, 0, 0, 0, 0);
             // 
             // Cbo_membresia
             // 

@@ -56,6 +56,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.cs" />
+    <Compile Include="devo_detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="devo_detalle.Designer.cs">
+      <DependentUpon>devo_detalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="consulta_renta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="consulta_renta.Designer.cs">
+      <DependentUpon>consulta_renta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="devoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="devoluciones.Designer.cs">
+      <DependentUpon>devoluciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="renta_detalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +136,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="devo_detalle.resx">
+      <DependentUpon>devo_detalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consulta_renta.resx">
+      <DependentUpon>consulta_renta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="devoluciones.resx">
+      <DependentUpon>devoluciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="renta_detalle.resx">
       <DependentUpon>renta_detalle.cs</DependentUpon>
     </EmbeddedResource>

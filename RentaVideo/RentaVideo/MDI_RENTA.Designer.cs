@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDI_RENTA));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,10 +39,12 @@
             this.materialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeRentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.devolucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Lbl_usuario = new System.Windows.Forms.Label();
-            this.rentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,10 +127,33 @@
             // contabilidadToolStripMenuItem
             // 
             this.contabilidadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rentaToolStripMenuItem});
+            this.rentaToolStripMenuItem,
+            this.consultaDeRentaToolStripMenuItem,
+            this.devolucionesToolStripMenuItem});
             this.contabilidadToolStripMenuItem.Name = "contabilidadToolStripMenuItem";
             this.contabilidadToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.contabilidadToolStripMenuItem.Text = "Procesos";
+            // 
+            // rentaToolStripMenuItem
+            // 
+            this.rentaToolStripMenuItem.Name = "rentaToolStripMenuItem";
+            this.rentaToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.rentaToolStripMenuItem.Text = "Registro de Renta";
+            this.rentaToolStripMenuItem.Click += new System.EventHandler(this.RentaToolStripMenuItem_Click);
+            // 
+            // consultaDeRentaToolStripMenuItem
+            // 
+            this.consultaDeRentaToolStripMenuItem.Name = "consultaDeRentaToolStripMenuItem";
+            this.consultaDeRentaToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.consultaDeRentaToolStripMenuItem.Text = "Consulta de Renta";
+            this.consultaDeRentaToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDeRentaToolStripMenuItem_Click);
+            // 
+            // devolucionesToolStripMenuItem
+            // 
+            this.devolucionesToolStripMenuItem.Name = "devolucionesToolStripMenuItem";
+            this.devolucionesToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.devolucionesToolStripMenuItem.Text = "Devoluciones";
+            this.devolucionesToolStripMenuItem.Click += new System.EventHandler(this.DevolucionesToolStripMenuItem_Click);
             // 
             // informesToolStripMenuItem
             // 
@@ -154,20 +180,16 @@
             this.Lbl_usuario.Text = "Usuario";
             this.Lbl_usuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // rentaToolStripMenuItem
-            // 
-            this.rentaToolStripMenuItem.Name = "rentaToolStripMenuItem";
-            this.rentaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.rentaToolStripMenuItem.Text = "Renta";
-            this.rentaToolStripMenuItem.Click += new System.EventHandler(this.RentaToolStripMenuItem_Click);
-            // 
             // MDI_RENTA
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.Red;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Lbl_usuario);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MDI_RENTA";
@@ -198,5 +220,7 @@
         private System.Windows.Forms.ToolStripMenuItem materialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bonoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeRentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem devolucionesToolStripMenuItem;
     }
 }

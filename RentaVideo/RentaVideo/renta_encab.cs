@@ -15,12 +15,13 @@ namespace CapaVistaFRM
 {
     public partial class renta_encab : Form
     {
-        private formato frm_renta_Detalle;
+        private renta_detalle frm_renta_Detalle;
 
         OdbcConnection conn = new OdbcConnection("Dsn=rentavideos");
         public renta_encab()
         {
             InitializeComponent();
+            llenarTxtRentaEncab();
             llenarComboMembresia();
             llenarComboEmpleado();
         }
@@ -31,6 +32,27 @@ namespace CapaVistaFRM
         private void Renta_encab_Load(object sender, EventArgs e)
         {
                 
+        }
+
+        void llenarTxtRentaEncab()
+        {
+            //llenado de textBox Cod Renta Encabezado
+            try
+            {
+                txt_codEncab.Text = "";                
+                conn.Open();
+                OdbcCommand command = new OdbcCommand("SELECT MAX(ID_ENCABEZADO)+1 FROM `renta_encabezado`", conn);
+                OdbcDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {                                     
+                    txt_codEncab.Text = reader.GetValue(0).ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
         }
 
         void llenarComboMembresia()
@@ -80,17 +102,39 @@ namespace CapaVistaFRM
 
         private void Btn_siguiente_Click(object sender, EventArgs e)
         {
-            //RENTA_DETALLE
-            if (frm_renta_Detalle == null)
+            if (txt_codEncab.Text == "" || Cbo_membresia.Text == "" || Cbo_empleado.Text == "")
             {
-                frm_renta_Detalle = new formato();                
-                frm_renta_Detalle.FormClosed += new FormClosedEventHandler(frm_renta_Detalle_FormClosed);
-                frm_renta_Detalle.Show();
+                MessageBox.Show("Debe llenar todo los campos. ", "VERIFICAR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                frm_renta_Detalle.Activate();
-            }
+                conn.Open();
+                OdbcCommand codigo = new OdbcCommand();
+                codigo.Connection = conn;
+                codigo.CommandText = ("INSERT INTO `renta_encabezado`(`MEMBRESIA`, `EMPLEADO`, `FECHA_INICIO`, `FECHA_FIN`) "
+                    + "VALUES ( '" + Cbo_membresia.Text + "' , '" + Cbo_empleado.Text + "', '" + Dtp_inicio.Text + "', '" + Dtp_fin.Text + "' )");
+                try
+                {
+                    codigo.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OdbcException ex)
+                {
+                    MessageBox.Show(" Error al hacer el INSERT en RENTA_ENCABEZADO. \n\n Error: " + ex.ToString());
+                    conn.Close();
+                }
+                //RENTA_DETALLE
+                if (frm_renta_Detalle == null)
+                {
+                    frm_renta_Detalle = new renta_detalle(txt_codEncab.Text, Cbo_membresia.Text, Cbo_empleado.Text, Dtp_inicio.Value, Dtp_fin.Value);
+                    frm_renta_Detalle.FormClosed += new FormClosedEventHandler(frm_renta_Detalle_FormClosed);
+                    frm_renta_Detalle.Show();
+                }
+                else
+                {
+                    frm_renta_Detalle.Activate();
+                }
+            }                        
         }
     }
 }
